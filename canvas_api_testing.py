@@ -11,7 +11,8 @@ def main():
     account = canvas.get_current_user()
     print(account)
     courses = account.get_courses()
-    print(courses[0].__dict__.keys())
+    print(canvas.get_course(196510).__dict__.keys())
+    print(canvas.get_course(196510).__dict__.get("enrollments"))
     print()
 
     enrolled_courses = []
@@ -25,8 +26,6 @@ def main():
         if formatted_course_code == "Inapplicable":
             continue
         enrolled_courses.append([formatted_course_code])
-    # print(enrolled_courses)
-    print()
     print(get_assignments(196510))
 
 def clean_course_code(course_code,course_id):
